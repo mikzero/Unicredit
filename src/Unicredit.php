@@ -25,7 +25,8 @@ class Unicredit
     public function __construct($cfg)
     {
         $this->cfg = array_merge([
-            'timeout' => 150000
+            'timeout' => 150000,
+            'tr_Type' => 'PURCHASE'
         ], $cfg);
     }
 
@@ -84,7 +85,7 @@ class Unicredit
         $init->errorURL = $this->cfg['error_url'];
         $init->shopID = $id;
         $init->shopUserRef = $email;
-        $init->trType = "AUTH";
+        $init->trType = $this->cfg['tr_type'];
         $init->amount = $amount * 100;
 
         $response = new Bag();
