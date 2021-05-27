@@ -85,7 +85,7 @@ class Unicredit
         $init->errorURL = $this->cfg['error_url'];
         $init->shopID = $id;
         $init->shopUserRef = $email;
-        $init->trType = $this->cfg['tr_type'];
+        $init->trType = $this->cfg['tr_Type'];
         $init->amount = $amount * 100;
 
         $response = new Bag();
